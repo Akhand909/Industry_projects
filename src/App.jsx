@@ -6,9 +6,10 @@ import { solarEnergyProjects } from "./data/solarEnergyProjects";
 import { thermalEnergyProjects } from "./data/thermalEnergyProjects";
 import { windEnergyProjects } from "./data/windEnergyProjects";
 import { newProjects } from "./data/newProjects";
+import { internationalProjects } from "./data/internationalProjects";
 
 function App() {
-  const initialData = [
+  const nationalData = [
     ...otherProjects,
     ...portInfrastructureProjects,
     ...solarEnergyProjects,
@@ -16,6 +17,9 @@ function App() {
     ...windEnergyProjects,
     ...newProjects,
   ];
+
+  const [projectType, setProjectType] = useState("National");
+  const currentData = projectType === "National" ? nationalData : internationalProjects;
 
   const initialCategories = [
     "Aviation",
@@ -45,10 +49,20 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
-  const [filteredData, setFilteredData] = useState(initialData); // State for filteredData
+  const [filteredData, setFilteredData] = useState(nationalData); // State for filteredData
 
-  const categories = [...new Set(initialCategories.map((item) => item))];
-  const locations = [...new Set(initailLocations.map((item) => item))];
+  const categories = projectType === "National" 
+    ? [...new Set(initialCategories)] 
+    : [...new Set(internationalProjects.map((item) => item.category))].filter(Boolean);
+  const locations = projectType === "National" 
+    ? [...new Set(initailLocations)] 
+    : [...new Set(internationalProjects.map((item) => item.location))].filter(Boolean);
+
+  useEffect(() => {
+    setSearchQuery("");
+    setSelectedCategory("");
+    setSelectedLocation("");
+  }, [projectType]);
 
   console.log(categories);
   console.log(locations);
@@ -69,22 +83,30 @@ function App() {
   useEffect(() => {
     console.log("useEffect triggered");
 
-    const newFilteredData = initialData.filter((item) => {
+    const newFilteredData = currentData.filter((item) => {
+      const itemName = item.name || "";
+      const itemDesc = item.description || "";
+      const itemCat = item.category || "";
+      const itemArea = item.area || "";
+      const itemBudget = item.budget || "";
+      const itemDeadline = item.deadline || "";
+      const itemLocation = item.location || "";
+
       const matchesSearchQuery =
-        item.name.toLowerCase().includes(searchQuery) ||
-        item.description.toLowerCase().includes(searchQuery) ||
-        item.category.toLowerCase().includes(searchQuery) ||
-        item.area.toLowerCase().includes(searchQuery) ||
-        item.budget.toLowerCase().includes(searchQuery) ||
-        item.deadline.toLowerCase().includes(searchQuery) ||
-        item.location.toLowerCase().includes(searchQuery);
+        itemName.toLowerCase().includes(searchQuery) ||
+        itemDesc.toLowerCase().includes(searchQuery) ||
+        itemCat.toLowerCase().includes(searchQuery) ||
+        itemArea.toLowerCase().includes(searchQuery) ||
+        itemBudget.toLowerCase().includes(searchQuery) ||
+        itemDeadline.toLowerCase().includes(searchQuery) ||
+        itemLocation.toLowerCase().includes(searchQuery);
 
       const matchesCategory = selectedCategory
-        ? item.category === selectedCategory
+        ? itemCat === selectedCategory
         : true;
 
       const matchesLocation = selectedLocation
-        ? item.location.toLowerCase().includes(selectedLocation.toLowerCase())
+        ? itemLocation.toLowerCase().includes(selectedLocation.toLowerCase())
         : true;
 
       return matchesSearchQuery && matchesCategory && matchesLocation;
@@ -93,13 +115,35 @@ function App() {
     console.log("Filtered data inside useEffect:", newFilteredData); // Log filtered data
 
     setFilteredData(newFilteredData); // Set filtered data to state
-  }, [searchQuery, selectedCategory, selectedLocation]); // Dependencies for re-filtering
+  }, [searchQuery, selectedCategory, selectedLocation, currentData]); // Dependencies for re-filtering
 
   console.log(filteredData);
 
   return (
     <div className="p-5 font-sans">
-      <h1 className="text-2xl font-bold mb-4 text-center md:text-left">Project Table</h1>
+      <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold text-center md:text-left">
+          {projectType === "National" ? "National Projects" : "International Projects"} Table
+        </h1>
+        <div className="flex gap-2 mt-4 md:mt-0 bg-gray-100 p-1 rounded-lg">
+          <button
+            onClick={() => setProjectType("National")}
+            className={`px-4 py-2 rounded-md font-medium transition-colors ${
+              projectType === "National" ? "bg-white shadow-sm text-blue-600" : "text-gray-600 hover:bg-gray-200"
+            }`}
+          >
+            National
+          </button>
+          <button
+            onClick={() => setProjectType("International")}
+            className={`px-4 py-2 rounded-md font-medium transition-colors ${
+              projectType === "International" ? "bg-white shadow-sm text-blue-600" : "text-gray-600 hover:bg-gray-200"
+            }`}
+          >
+            International
+          </button>
+        </div>
+      </div>
       <div className="mb-4 flex flex-col sm:flex-row gap-4">
         <input
           type="text"
