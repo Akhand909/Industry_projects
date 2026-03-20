@@ -446,7 +446,7 @@ export const internationalProjects = [
     "description": "The Mining Expansion in Australia involves increasing extraction capacity of minerals and resources through new sites and upgraded facilities. It supports exports, economic growth, and global supply chains.",
     "category": "Mining",
     "area": "60000 km2",
-    "budget": "20",
+    "budget": "$20B",
     "deadline": "2030",
     "location": "Western Australia (lithium, rare earths) and the Queensland/NSW coal basins,"
   },
@@ -457,7 +457,7 @@ export const internationalProjects = [
     "description": "The Sydney Metro in Sydney is a fully automated rapid transit system expanding urban rail connectivity. It includes new lines, stations, and driverless trains to improve capacity, reduce congestion, and support city growth.",
     "category": "Transport",
     "area": "113 km",
-    "budget": "25",
+    "budget": "$25B",
     "deadline": "2030",
     "location": "sydney"
   },
@@ -468,7 +468,7 @@ export const internationalProjects = [
     "description": "large-scale renewable energy project in Australia that aims to generate solar power in the Northern Territory and export it to Singapore via subsea transmission cables. Developed by Sun Cable, the project includes one of the world’s largest solar farms (up to 20 GW capacity) combined with massive battery storage (40+ GWh) and a ~4,200 km high-voltage DC cable system.",
     "category": "Solar/Power",
     "area": "30,000 acres",
-    "budget": "30",
+    "budget": "$30B",
     "deadline": "2030",
     "location": "North Australia"
   },
@@ -479,9 +479,9 @@ export const internationalProjects = [
     "description": "project is a major road infrastructure development in Adelaide, forming the final section of the North–South Corridor. It involves constructing approximately 10.5 km of motorway, including tunnels, bridges, and surface roads, to connect the Torrens Road to Darlington.",
     "category": "Highway",
     "area": "\"14-kilometre with 4.5 kilometres of duplicated road. www.wa.gov.au www.wa.gov.au\"",
-    "budget": "39",
+    "budget": "$39B",
     "deadline": "2031",
-    "location": ""
+    "location": "Adelaide, South Australia"
   },
   {
     "id": 45,
@@ -512,7 +512,7 @@ export const internationalProjects = [
     "description": "A second heavy-duty power cable linking Tasmania and Victoria is scheduled for completion in 2030, allowing for power exchange.",
     "category": "Power",
     "area": "255 km",
-    "budget": "3.83",
+    "budget": "$3.83B",
     "deadline": "2030",
     "location": "Heybridge in North West Tasmania to the Latrobe Valley in Victoria"
   },
@@ -523,7 +523,7 @@ export const internationalProjects = [
     "description": "While key parts extend further, significant planning and development for this 840 km transmission line occur throughout the 2020s, connecting the North West Minerals Province to the National Electricity Market (NEM).",
     "category": "Power",
     "area": "840km",
-    "budget": "14",
+    "budget": "$14B",
     "deadline": "2032",
     "location": "North Queensland,"
   },
@@ -754,7 +754,7 @@ export const internationalProjects = [
     "description": "A major light rail system connecting Auckland Airport to the city center and beyond, aimed at reducing congestion and supporting urban growth.",
     "category": "Urban Transport",
     "area": "24–30 km corridor",
-    "budget": "18",
+    "budget": "$18B",
     "deadline": "2023-2035",
     "location": "auckland"
   },
@@ -765,7 +765,7 @@ export const internationalProjects = [
     "description": "A nationwide infrastructure development plan covering roads, railways, water systems, and housing to support long-term economic growth.",
     "category": "Multi-sector",
     "area": "50,000+ sq km",
-    "budget": "100",
+    "budget": "$100B",
     "deadline": "2020-2040",
     "location": "new zealand"
   },
@@ -776,7 +776,7 @@ export const internationalProjects = [
     "description": "A large-scale overhaul of drinking water, wastewater, and stormwater systems to improve safety, efficiency, and resilience.",
     "category": "Water Infrastructure",
     "area": "20,000+ sq km",
-    "budget": "50",
+    "budget": "$50B",
     "deadline": "2022-2035",
     "location": "All cities & towns"
   },
@@ -787,7 +787,7 @@ export const internationalProjects = [
     "description": "Expansion of wind farms and hydroelectric projects to achieve 100% renewable electricity goals.",
     "category": "Energy",
     "area": "100–300 sq km",
-    "budget": "20",
+    "budget": "$20B",
     "deadline": "2023-2040",
     "location": "South Taranaki"
   },
@@ -798,7 +798,7 @@ export const internationalProjects = [
     "description": "Large-scale housing and urban infrastructure development to address housing shortages and population growth.",
     "category": "Housing",
     "area": "30–80 sq km",
-    "budget": "40",
+    "budget": "$40B",
     "deadline": "2018-2035",
     "location": "Nationwide"
   },
