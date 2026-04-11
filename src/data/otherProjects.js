@@ -1007,4 +1007,14 @@ export const otherProjects = [
     area: "200-250 km",
     deadline: "2035",
   },
+  {
+    id: 101,
+    name: "Bogibeel Bridge Connectivity Enhancement",
+    category: "Transportation Infrastructure",
+    location: "Assam, India",
+    description: "The Bogibeel Bridge is a strategic rail-cum-road infrastructure project built over the Brahmaputra River to enhance connectivity between Assam and Arunachal Pradesh. It significantly reduces travel time, improves trade and logistics, and strengthens defense mobility in the northeastern region. The bridge connects Dibrugarh (south bank) with Dhemaji (north bank), acting as a vital transportation corridor and boosting regional economic development.",
+    budget: "$1.2B – $1.5B",
+    area: "120–150 km",
+    deadline: "2032",
+  },
 ];
