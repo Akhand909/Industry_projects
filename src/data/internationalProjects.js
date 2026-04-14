@@ -1143,7 +1143,7 @@ export const internationalProjects = [
     "deadline": "2035",
     "location": "Montreal, Quebec"
   }
-,
+  ,
   {
     "id": 105,
     "country": "Saudi Arabia",
@@ -1880,5 +1880,16 @@ export const internationalProjects = [
     "budget": "$756 million+",
     "deadline": "2028",
     "location": "Virginia,United States"
-  }
+  },
+  {
+    "id": 172,
+    "country": "United Kingdom",
+    "name": "UK Midlands Rail Freight Gateways (East Midlands Gateway)",
+    "description": "The East Midlands Gateway is a large-scale strategic rail freight interchange and inland logistics hub designed to integrate rail, road, and air freight networks in central England. The project connects directly to major UK ports such as Southampton, Felixstowe, and London Gateway through a dedicated rail link, while also being adjacent to the M1 motorway and East Midlands Airport. It includes a high-capacity intermodal terminal handling up to 16 freight trains daily and extensive warehousing, making it a key node in the UK’s national logistics and supply chain network.",
+    "category": "Rail Freight",
+    "area": "2.8 km²",
+    "budget": "$0.65 Billion",
+    "deadline": "2032",
+    "location": "East Midlands region, United Kingdom"
+  },
 ];
